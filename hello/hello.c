@@ -6,12 +6,7 @@ void greater_number();
 void hourly_rate();
 
 int main() {
-    printf("Hello, World\n");
-
-    odd_even();
-    greater_number();
     hourly_rate();
-
 
     return 0;
 }
@@ -47,7 +42,8 @@ void greater_number()
 
 void hourly_rate()
 {
-    int hours_worked, regular_pay, overtime_pay, total_pay;
+    int hours_worked, regular_pay, overtime_pay;
+    float total_pay;
 
     printf("Enter hours worked: ");
     scanf("%d", &hours_worked);
@@ -64,5 +60,5 @@ void hourly_rate()
         total_pay = hours_worked * regular_pay;
     }
 
-    printf("Total pay: %d\n", total_pay);
+    printf("Total pay: $%.2f\n", total_pay);
 }

@@ -17,11 +17,8 @@ int main() {
     // Use scanf to directly read the input in the specified format
     scanf("(%3s) %3s-%4s", areaCode, firstThree, lastFour);  
 
-    // Print the number in the form xxx-xxx-xxxx
+    // Print the number in the form xxx.xxx.xxxx
     printf("You entered %s.%s.%s\n", areaCode, firstThree, lastFour);
 
     return 0;
 }
-
-
-
