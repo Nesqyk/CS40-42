@@ -6,7 +6,6 @@ to integers and get its average and sum
 */
 
 #include <stdio.h>
-#include <math.h>
 
 int main()
 {
@@ -22,15 +21,11 @@ int main()
 
     // Covert the decimal numbers to its nearest integer
     // Convert the decimal numbers to their nearest integer
-
-    int int1 = round(num1);
-
-    printf("The nearest integer of %.2f is %d\n",num1,int1);
-
-    int int2 = round(num2);
-    int int3 = round(num3);
-    int int4 = round(num4);
-    int int5 = round(num5);          
+    int int1 = (int)(num1 + 0.5);
+    int int2 = (int)(num2 + 0.5);
+    int int3 = (int)(num3 + 0.5);
+    int int4 = (int)(num4 + 0.5);
+    int int5 = (int)(num5 + 0.5);      
 
     // Calculate the sum and average of the integers
     sum = int1 + int2 + int3 + int4 + int5;
