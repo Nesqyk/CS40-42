@@ -103,37 +103,48 @@ void averageGrade()
 
 void generateVariance()
 {
-    int quiz1, quiz2, quiz3, quiz4;
+    int grade1, grade2, grade3, grade4, grade5;
     float average;
     float variance, standardDeviation;
+    float deviation1, deviation2, deviation3, deviation4, deviation5;
 
     // Input quiz scores without arrays
-    printf("Enter score for Quiz #1: ");
-    scanf("%d", &quiz1);
+    printf("Enter score for Grade #1: ");
+    scanf("%d", &grade1);
 
-    printf("Enter score for Quiz #2: ");
-    scanf("%d", &quiz2);
+    printf("Enter score for Grade #2: ");
+    scanf("%d", &grade2);
 
-    printf("Enter score for Quiz #3: ");
-    scanf("%d", &quiz3);
+    printf("Enter score for Grade #3: ");
+    scanf("%d", &grade3);
 
-    printf("Enter score for Quiz #4: ");
-    scanf("%d", &quiz4);
+    printf("Enter score for Grade #4: ");
+    scanf("%d", &grade4);
+
+    printf("Enter score for Grade #5: ");
+    scanf("%d", &grade5);
 
     // Calculate the average
-    average = (quiz1 + quiz2 + quiz3 + quiz4) / 4.0;
+    average = (grade1 + grade2 + grade3 + grade4 + grade5) / 5.0;
+
+    deviation1 = grade1 - average;
+    deviation2 = grade2 - average;
+    deviation3 = grade3 - average;
+    deviation4 = grade4 - average;
+    deviation5 = grade5 - average;
 
     // Calculate the variance manually
-    variance = (pow(quiz1 - average, 2) + pow(quiz2 - average, 2) +
-                pow(quiz3 - average, 2) + pow(quiz4 - average, 2)) / 4;
-
-    // Calculate standard deviation
-    standardDeviation = sqrt(variance);
+    variance = (deviation1 * deviation1) + (deviation2 * deviation2) + (deviation3 * deviation3) +
+             (deviation4 * deviation4) + (deviation5 * deviation5) / 5;
 
     // Output the results
-    printf("Average: %.2f\n", average);
-    printf("Variance: %.2f\n", variance);
-    printf("Standard Deviation: %.2f\n", standardDeviation);
+    printf("\nAverage: %.2f\n", average);
+    printf("Number  Ind.Deviation  Square Individual.Deviation\n");
+    printf("%5d %15.2f %28.2f\n", grade1, deviation1, deviation1 * deviation1);
+    printf("%5d %15.2f %28.2f\n", grade2, deviation2, deviation2 * deviation2);
+    printf("%5d %15.2f %28.2f\n", grade3, deviation3, deviation3 * deviation3);
+    printf("%5d %15.2f %28.2f\n", grade4, deviation4, deviation4 * deviation4);
+    printf("%5d %15.2f %28.2f\n", grade5, deviation5, deviation5 * deviation5);
 }
 
 
@@ -167,7 +178,7 @@ void farenheitToCelcius()
     printf("Enter value for farenheit ");
     scanf("%f", &farenheit);
 
-    celcius = 5.0 / 9.0 * (farenheit - 32.0);
+    celcius = (5.0 / 9.0) * (farenheit - 32.0);
 
     printf("Farenheit to Celcius converted %f", celcius);
 }
@@ -214,4 +225,50 @@ void calculateSpeed(int distance, int time)
     printf("Speed for Time: %d, Distance: %d is %d", time, distance, speed);
 }
 
+double fibonacci(int n, int n0)
+{
+    float phi, psi;
+    phi = (1 + sqrt(5)) / 2;
+    psi = (1 - sqrt(5)) / 2;
 
+    // phi^fn-f0 * f0
+    n = (pow(phi, n) - pow(psi, n) /  sqrt(5));
+    return (int) n;
+}
+
+void greatestCommonDivisor(){
+    int num1, num2;
+
+
+    printf("Input Two Numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    if(num1 == 0)
+    {
+        printf("GCD of %d and %d is %d", num1, num2, num2);
+    }
+
+    num2 %= num1;
+    
+    printf("GCD of %d and %d is %d", num2, num1, num2);
+}
+
+int is_prime(int num) {
+    if (num <= 1) {
+        return 0; // 0 and 1 are not prime
+    }
+    if (num <= 3) {
+        return 1; // 2 and 3 are prime
+    }
+    if (num % 2 == 0 || num % 3 == 0) {
+        return 0; // Multiples of 2 and 3 are not prime
+    }
+
+    int i;
+    for (i = 5; i * i <= num; i += 6) {
+        if (num % i == 0 || num % (i + 2) == 0) {
+            return 0;
+        }
+    }
+    return 1;
+}
