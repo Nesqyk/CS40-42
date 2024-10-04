@@ -13,6 +13,14 @@ void calculateBMI();
 int main()
 {
     testMath();
+    int a = 10, b = 3;
+    float c = 4.5;
+    int result;
+
+    // Complex expression with multiple types and casting
+    result = ((float)((int)(double) a / b) + (int)(c * b) - (float)(a % b));
+
+    printf("Result: %d\n", result);
 }
 
 
@@ -52,14 +60,15 @@ void lengthToPerimiter(int side_length)
 
 void separateDigit(int number)
 {
-    int firstDigit, middleDigit, tailDigit;
+    int firstDigit, middleDigit, tailDigit, fourthDigit;
 
-    printf("Enter a 3 digit number: ");
+    printf("Enter a 4 digit number: ");
     scanf("%d", &number);
     
     firstDigit = (number / 100);
     middleDigit = (number / 10) % 10;
     tailDigit =  number % 10;
+    fourthDigit = 
 
     printf("First Digit of %d is %d\n", number, firstDigit);
     printf("Middle Digit of %d is %d\n", number, middleDigit);
@@ -272,3 +281,22 @@ int is_prime(int num) {
     }
     return 1;
 }
+
+
+int isPalindrome(int x)
+{
+    if(x < 0) return 0;
+
+    int temp, reverse;
+    temp = x;
+    reverse = 0;
+
+    while(x != 0)
+    {           
+        reverse = (reverse / 10) + (reverse % 10);
+        x /= 10;
+    }
+
+    return temp == reverse;
+}
+
