@@ -35,6 +35,7 @@ int main()
     total_hours = week1 + week2 + week3 + week4 + week5;
 
     // Calculate pay for each week using per_hour
+    
     float pay_week1 = week1 * per_hour;
     float pay_week2 = week2 * per_hour;
     float pay_week3 = week3 * per_hour;

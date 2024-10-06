@@ -28,7 +28,7 @@ int main() {
     // Loop to print each part number and price in table format
     for (int i = 0; i < 4; i++) {
         printf("%-10s $%.2f\n", part_no[i], price[i]);
-        }
+    }
 
     return 0;
 }

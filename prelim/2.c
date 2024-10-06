@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include <stdio.h>
 
+#define METER_KM 1000
+#define METER_INCH 3.28
+
 int main() {
     // Declare and store the total number of kilometers and inches
     float kilometers, inches;
@@ -22,7 +25,7 @@ int main() {
     scanf("%f", &inches);
 
     // Calculate the number of feet from kilometers
-    feet= kilometers * (1000 * 3.28084);
+    feet= kilometers * (METER_KM * METER_INCH);
     
     // Convert the inches to millimeters
     millimeters = (inches * 2.54) * 10;

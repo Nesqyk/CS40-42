@@ -19,19 +19,19 @@ int main()
 
     // Calculate the number of years.
     years = totalSeconds / (60 * 60 * 24 * 365);
-    totalSeconds = totalSeconds % (60 * 60 * 24 * 365);
+    totalSeconds %= (60 * 60 * 24 * 365);
 
     // Calculate the number of weeks.
-    weeks = totalSeconds / 604800;
-    totalSeconds = totalSeconds % 604800;
+    weeks = totalSeconds / 60 * 60 * 24 * 7;
+    totalSeconds %= 60 * 60 * 60 * 7;
 
     // Calculate the number of days.
-    days = totalSeconds / 86400;
-    totalSeconds = totalSeconds % 86400;
+    days = totalSeconds / 60 * 60 * 24;
+    totalSeconds %= 60 * 60 * 24;
 
     // Calculate the number of hours.
-    hours = totalSeconds / 3600;
-    totalSeconds = totalSeconds % 3600;
+    hours = totalSeconds / 60 * 60;
+    totalSeconds = totalSeconds % 60 * 60;
 
     // Calculate the number of minutes and seconds.
     minutes = totalSeconds / 60;
