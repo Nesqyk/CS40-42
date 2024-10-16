@@ -1,68 +1,59 @@
 /*
 Assigment No: 1.1 Control Flow
 Programmer: Tyrone M. Tabornal
-Description: A program that prompts the user Customer IDNO, Customer Name, and Unit Consumed.
-             Calculate the amount charges, surcharge amount, and net amount paid by the customer.
+Description: A program that calculates the electricity  bill of a given customer
 */
 
 #include <stdio.h>
 
 int main()
 {
-    // Declare and store the customer IDNO, customer name, and unit consumed
-    int customerIDNO, unitConsumed;
+    // Declare the following variable
     char customerName[100];
+    int customerID, consumedUnit;
 
-    // Declare variables to store the amount charges, surcharge amount, and net amount paid by the customer
-    float amountCharges, surchargeAmount, netAmountPaid;
+    float amountCharge, surCharge, netPaidAmount;
 
-    // Prompt the user to enter the customer IDNO, customer name, and unit consumed
-    printf("Enter the Customer IDNO: ");
-    scanf("%d", &customerIDNO);
-    printf("Enter the Customer Name: ");
+    // Prompt the user for the following input
+    printf("Input Customer ID: ");
+    scanf("%d", &customerID);
+    printf("Input the name of the customer: ");
     scanf("%s", customerName);
-    printf("Enter the Unit Consumed: ");
-    scanf("%d", &unitConsumed);
-
-    // Calculate the amount charges
-    if (unitConsumed <= 199)    
+    printf("Input the unit consumed by the customer: ");
+    scanf("%d", &consumedUnit);
+    
+    // Calculate
+    if (consumedUnit < 199) 
     {
-        amountCharges = unitConsumed * 1.20;
-    }
-    else if (unitConsumed > 200 && unitConsumed <= 400)
+        amountCharge = consumedUnit * 1.20;
+    } 
+    else if (consumedUnit >= 200 && consumedUnit < 400) 
     {
-        amountCharges = unitConsumed * 1.50;
-    }
-    else if (unitConsumed > 400 && unitConsumed <= 600)
+        amountCharge = consumedUnit * 1.50;
+    } else if (consumedUnit >= 400 && consumedUnit < 600)
     {
-        amountCharges = unitConsumed * 1.80;
-    }
-    else
+        amountCharge = consumedUnit * 1.80;
+    } 
+    else 
     {
-        amountCharges = unitConsumed * 2.00;
-    }
-
-    // Calculate the surcharge amount
-    if (amountCharges > 400)
-    {
-        surchargeAmount = amountCharges * 0.15;
-    }
-    else
-    {
-        surchargeAmount = 0;
+        amountCharge = consumedUnit * 2.0;
     }
 
-    // Calculate the net amount paid by the customer
-    netAmountPaid = amountCharges + surchargeAmount;
+    if (amountCharge > 400) 
+    {
+        surCharge = amountCharge * 0.15;
+    } else 
+    {
+        surCharge = 100;
+    }
 
-    // Print the output of the conversion.
-    printf("\n\t Electricity Bill\n");
-    printf("Customer IDNO: %27d\n", customerIDNO);
-    printf("Customer Name: %27s\n", customerName);
-    printf("Unit Consumed: %27d\n", unitConsumed);
-    printf("Amount Charges @Rs. 2.00 per unit: %.2f\n", amountCharges);
-    printf("Surcharge Amount: %.2f\n", surchargeAmount);
-    printf("Net Amount Paid By the Customer: %.2f\n", netAmountPaid);
+    netPaidAmount = amountCharge + surCharge;
 
-    return 0;
+    printf("\nElectricity Bill\n");
+    printf("Customer Name: %s\n",customerName);
+    printf("Customer IDNO: %d\n", customerID);
+    printf("Unit Consumed: %d\n", consumedUnit);
+    printf("Amount Charges @R.s 2.00 Per unit: %.2f \n", amountCharge);
+    printf("Surcharge Amount %.2f \n", surCharge);
+    printf("Net Amoung Paid By the Customer %.2f\n",netPaidAmount);
 }

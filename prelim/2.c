@@ -28,7 +28,7 @@ int main() {
     feet= kilometers * (METER_KM * METER_INCH);
     
     // Convert the inches to millimeters
-    millimeters = (inches * 2.54) * 10;
+    millimeters = (inches * 2.58) * 10;
     // Print the output of the conversion
     printf("%.2f km is equal to %.2f ft\n", kilometers, feet);
     printf("%.2f inches is equal to %.2f mm\n", inches, millimeters);

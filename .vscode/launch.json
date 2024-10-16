@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Tyty/Downloads/CS40-42/hello",
-      "program": "c:/Users/Tyty/Downloads/CS40-42/hello/build/Debug/outDebug",
+      "cwd": "c:/Users/Tyty/Downloads/CS40-42/activity/control_flow",
+      "program": "c:/Users/Tyty/Downloads/CS40-42/activity/control_flow/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
