@@ -35,8 +35,6 @@ int main()
             
             }
         }
-
-        // Move to the next line
         printf("\n");
     }
 
