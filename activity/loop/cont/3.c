@@ -17,14 +17,12 @@ int main()
     // Outer loop for each row
     for(int i = 0; i <= rows; i++)
     {
-        // Print asterisk in decreasing order for each row
-        for(int j = i; j >= 1; j--)
+        for(int k = 1; k <= i; k++)
         {
-            printf("* ");
+            printf("*");
         }
-        // Move to the next line after each row
+
         printf("\n");
     }
-
     return 0;
 }

@@ -27,9 +27,9 @@ int main()
         // Print the stars with spaces between them
         for (int k = 1; k <= i; k++) 
         {
-            printf("*");  // Print a star
+            printf("*");
 
-            if (k < i) 
+            if(k < i)
             {
                 printf(" ");  // print a space
             
