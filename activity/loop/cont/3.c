@@ -15,7 +15,7 @@ int main()
     scanf("%d", &rows);
 
     // Outer loop for each row
-    for(int i = 0; i <= rows; i++)
+    for(int i = 1; i <= rows; i++)
     {
         for(int k = 1; k <= i; k++)
         {

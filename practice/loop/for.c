@@ -166,11 +166,16 @@ void bank_withdrawal()
     } while (tries != 3);
 }
 
-struct Product 
+typedef struct  
 {
-    char* name;
+    char name[12];
     int quantity;
-};
+} product;
+
+product products[5];
+
+
+
 
 typedef struct  
 {
@@ -214,7 +219,7 @@ void voting_system()
 
                 if(!vote(v_name)) 
                 {
-                    printf("Invalid Name");
+                    printf("Invalid Name\n");
                 }
             }
 
@@ -264,3 +269,5 @@ void winners()
         }
     }
 }
+
+

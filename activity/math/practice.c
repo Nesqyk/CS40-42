@@ -187,6 +187,7 @@ void farenheitToCelcius()
     printf("Enter value for farenheit ");
     scanf("%f", &farenheit);
 
+
     celcius = (5.0 / 9.0) * (farenheit - 32.0);
 
     printf("Farenheit to Celcius converted %f", celcius);

@@ -10,16 +10,19 @@ It generates 5 rows in total.
 
 int main() 
 {
-    // Outer loop for each row
-    for (int i = 0; i <= 5; i++) 
-    {
-        // Print numbers in increasing order for each row
-        for (int j = i; j >= 1; j--) 
-        {
-            printf("%d", j);
-        }
-        printf("\n");  // Move to the next line after each row
-    }
+    int rows;
 
-    return 0;
+    printf("Enter how many rows: ");
+    scanf("%d", &rows);
+
+    for(int i = 1; i <= rows; i++)
+    {
+        for(int j = 1; j <= i; j++)
+        {
+            // 1 
+            // 2 3  
+            printf("%d", j + i - 1);
+        }
+        printf("\n");
+    }
 }
